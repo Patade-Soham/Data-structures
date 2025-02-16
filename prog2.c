@@ -1,5 +1,5 @@
 // Soham Patade
-// 241P004
+// 241P004.
 #include <stdio.h>
 #define SIZE 5 // Maximum size of the stack
 int stack[SIZE], top = -1; // Stack array and top pointer
