@@ -33,7 +33,7 @@ void insertAtEnd(struct Node** head, int data) {
     temp->next = newNode;
 }
 
-// Function to insert a node at a given position (1-based index)
+// Function to insert a node at a specific position (1-based index)
 void insertAtPosition(struct Node** head, int data, int position) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
     newNode->data = data;
@@ -59,8 +59,76 @@ void insertAtPosition(struct Node** head, int data, int position) {
     temp->next = newNode;
 }
 
+// Function to delete a node at the beginning of the list
+void deleteAtBeginning(struct Node** head) {
+    if (*head == NULL) {
+        printf("List is empty. Nothing to delete.\n");
+        return;
+    }
+
+    struct Node* temp = *head;
+    *head = (*head)->next;
+    free(temp);
+}
+
+// Function to delete a node at the end of the list
+void deleteAtEnd(struct Node** head) {
+    if (*head == NULL) {
+        printf("List is empty. Nothing to delete.\n");
+        return;
+    }
+
+    struct Node* temp = *head;
+    if (temp->next == NULL) {
+        free(temp);
+        *head = NULL;
+        return;
+    }
+
+    while (temp->next != NULL && temp->next->next != NULL) {
+        temp = temp->next;
+    }
+
+    struct Node* lastNode = temp->next;
+    temp->next = NULL;
+    free(lastNode);
+}
+
+// Function to delete a node at a specific position (1-based index)
+void deleteAtPosition(struct Node** head, int position) {
+    if (*head == NULL) {
+        printf("List is empty. Nothing to delete.\n");
+        return;
+    }
+
+    struct Node* temp = *head;
+
+    if (position == 1) {
+        *head = (*head)->next;
+        free(temp);
+        return;
+    }
+
+    for (int i = 1; temp != NULL && i < position - 1; i++) {
+        temp = temp->next;
+    }
+
+    if (temp == NULL || temp->next == NULL) {
+        printf("Position out of range.\n");
+        return;
+    }
+
+    struct Node* nodeToDelete = temp->next;
+    temp->next = temp->next->next;
+    free(nodeToDelete);
+}
+
 // Function to print the linked list
 void printList(struct Node* head) {
+    if (head == NULL) {
+        printf("List is empty.\n");
+        return;
+    }
     struct Node* temp = head;
     while (temp != NULL) {
         printf("%d -> ", temp->data);
@@ -78,8 +146,11 @@ int main() {
         printf("1. Insert at the beginning\n");
         printf("2. Insert at the end\n");
         printf("3. Insert at a specific position\n");
-        printf("4. Display the list\n");
-        printf("5. Exit\n");
+        printf("4. Delete at the beginning\n");
+        printf("5. Delete at the end\n");
+        printf("6. Delete at a specific position\n");
+        printf("7. Display the list\n");
+        printf("8. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
 
@@ -102,16 +173,27 @@ int main() {
                 insertAtPosition(&head, data, position);
                 break;
             case 4:
+                deleteAtBeginning(&head);
+                break;
+            case 5:
+                deleteAtEnd(&head);
+                break;
+            case 6:
+                printf("Enter the position to delete: ");
+                scanf("%d", &position);
+                deleteAtPosition(&head, position);
+                break;
+            case 7:
                 printf("Linked List: ");
                 printList(head);
                 break;
-            case 5:
+            case 8:
                 printf("Exiting...\n");
                 break;
             default:
                 printf("Invalid choice. Please try again.\n");
         }
-    } while (choice != 5);
+    } while (choice != 8);
 
     return 0;
 }
