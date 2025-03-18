@@ -197,3 +197,115 @@ int main() {
 
     return 0;
 }
+/*
+
+Menu:
+1. Insert at the beginning
+2. Insert at the end
+3. Insert at a specific position
+4. Delete at the beginning
+5. Delete at the end
+6. Delete at a specific position
+7. Display the list
+8. Exit
+Enter your choice: 1
+Enter the value to insert at the beginning: 2
+
+Menu:
+1. Insert at the beginning
+2. Insert at the end
+3. Insert at a specific position
+4. Delete at the beginning
+5. Delete at the end
+6. Delete at a specific position
+7. Display the list
+8. Exit
+Enter your choice: 2
+Enter the value to insert at the end: 1
+
+Menu:
+1. Insert at the beginning
+2. Insert at the end
+3. Insert at a specific position
+4. Delete at the beginning
+5. Delete at the end
+6. Delete at a specific position
+7. Display the list
+8. Exit
+Enter your choice: 3
+Enter the value to insert: 4
+Enter the position to insert the value: 2
+
+Menu:
+1. Insert at the beginning
+2. Insert at the end
+3. Insert at a specific position
+4. Delete at the beginning
+5. Delete at the end
+6. Delete at a specific position
+7. Display the list
+8. Exit
+Enter your choice: 7
+Linked List: 2 -> 4 -> 1 -> NULL
+
+Menu:
+1. Insert at the beginning
+2. Insert at the end
+3. Insert at a specific position
+4. Delete at the beginning
+5. Delete at the end
+6. Delete at a specific position
+7. Display the list
+8. Exit
+Enter your choice: 4
+
+Menu:
+1. Insert at the beginning
+2. Insert at the end
+3. Insert at a specific position
+4. Delete at the beginning
+5. Delete at the end
+6. Delete at a specific position
+7. Display the list
+8. Exit
+Enter your choice: 7
+Linked List: 4 -> 1 -> NULL
+
+Menu:
+1. Insert at the beginning
+2. Insert at the end
+3. Insert at a specific position
+4. Delete at the beginning
+5. Delete at the end
+6. Delete at a specific position
+7. Display the list
+8. Exit
+Enter your choice: 5
+
+Menu:
+1. Insert at the beginning
+2. Insert at the end
+3. Insert at a specific position
+4. Delete at the beginning
+5. Delete at the end
+6. Delete at a specific position
+7. Display the list
+8. Exit
+Enter your choice: 7
+Linked List: 4 -> NULL
+
+Menu:
+1. Insert at the beginning
+2. Insert at the end
+3. Insert at a specific position
+4. Delete at the beginning
+5. Delete at the end
+6. Delete at a specific position
+7. Display the list
+8. Exit
+Enter your choice: 8
+Exiting...
+
+Process returned 0 (0x0)   execution time : 209.407 s
+Press any key to continue.
+*/
